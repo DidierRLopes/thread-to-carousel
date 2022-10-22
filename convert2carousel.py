@@ -109,6 +109,7 @@ if __name__ == '__main__':
 
     # Create each png image for the carousel
     for idx, tweet in enumerate(thread):
+        
         # Start creating image
         img_buf = io.BytesIO()
         plt.savefig(img_buf, format="png")
@@ -126,10 +127,11 @@ if __name__ == '__main__':
             (x + OUTSIDE_CANVAS_WIDTH, y + OUTSIDE_CANVAS_HEIGHT),
         )
         img = ImageDraw.Draw(background)
+        
         img.rounded_rectangle(
             white_shape,
             fill="#4b5564",
-            outline="white",
+            #outline="white",
             width=WHITE_LINE_WIDTH,
             radius=RADIUS,
         )
@@ -151,14 +153,14 @@ if __name__ == '__main__':
         y_user = y + WHITE_LINE_WIDTH + 40
 
         # Process username
-        font = ImageFont.truetype(r'firacode/Fira Code Bold 700.ttf', 30)
+        font = ImageFont.truetype(r'Ch1rp/chirp_heavy.otf', 30)
         username = client.get_user(username="didier_lopes", user_auth=False, user_fields=["profile_image_url"]).data.name
         # TODO: Improve to accept emojis
         username = emoji.demojize(username).split(":")[0].strip()
         img.text((x_user, y_user), username, (255,255,255), font=font)
 
         # Process tag name
-        font = ImageFont.truetype(r'firacode/Fira Code Medium 500.ttf', 20)
+        font = ImageFont.truetype(r'Ch1rp/chirp_medium.otf', 20)
         img.text((x_user, y_user + 40), "@" + USERNAME, (255,255,255), font=font)
 
         # Add tweet icon
@@ -166,8 +168,7 @@ if __name__ == '__main__':
         background.paste(tweet_icon, (710, 560), tweet_icon)
 
         # Add Tweet text
-        font = ImageFont.truetype(r'firacode/Fira Code Retina 450.ttf', 20)
-        astr = "Sample Text Sample Te amplext Sample Text Sample Teamp\n\nle TextSample ample TextSampl Text Sample TextSample TexxtSample Text Sample TextSample Text Sample Text Sample Text Sample Text Sample TextSample Text Sample TextSample Text Sample Text"
+        font = ImageFont.truetype(r'Ch1rp/chirp_regular.otf', 24)
         # remove last reference to link
         if 'https://t.co/' in tweet["text"].split(" ")[-1] and len(tweet["text"].split(" ")[-1]) == 23 and ": https://t.co" not in tweet["text"].split(" ")[-1]:
             text = " ".join(tweet["text"].split(" ")[:-1])
@@ -179,7 +180,7 @@ if __name__ == '__main__':
         text_w_spacing = list()
         for text in astr.split("\n"):
             if text:      
-                text_w_spacing += textwrap.wrap(text, width=48)
+                text_w_spacing += textwrap.wrap(text, width=50)
             else:
                 text_w_spacing += ["\n"]
         img.text((x + WHITE_LINE_WIDTH + 30, y_user + 110), "\n".join(text_w_spacing), (255,255,255), font=font)
