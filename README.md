@@ -1,6 +1,10 @@
-# Twitter Thread to Carousel
+# Twitter Thread to LinkedIn Carousel
 
 Python script that converts Twitter thread based on URL link into a PDF to be used as a LinkedIn carousel.
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/25267873/197401132-3b772f5b-3ae9-4400-a402-0b4e6f79ff7d.png" alt="Example" width=600/>
+</p>
 
 ## Example
 
