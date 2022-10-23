@@ -1,5 +1,7 @@
 # Twitter Thread to Carousel
 
+Python script that converts Twitter thread based on URL link into a PDF to be used as a LinkedIn carousel.
+
 ## Example
 
 <p align="center">
@@ -51,4 +53,15 @@ python convert2carousel.py https://twitter.com/didier_lopes/status/1570731358204
 ```
 
 where the tweet to be input needs to be the first of the thread, e.g. https://twitter.com/didier_lopes/status/1570731358204600323
+
+
+## Things that can be improved
+
+* Parse emojis (both on text and username)
+* Parse @username
+* Change box size based on text
+* Adapt text based on media attached
+* Adapt URL links
+
+
 
