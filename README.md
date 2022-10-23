@@ -1,5 +1,11 @@
 # Twitter Thread to Carousel
 
+## Example
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/25267873/197391335-b382e774-c417-41e0-ae3d-2e8c091fe4ad.gif" alt="Example"/>
+</p>
+
 ## Installation
 
 1. Create new environment:
